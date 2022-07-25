@@ -15,7 +15,7 @@ const { developmentChains } = require("../../helper-hardhat-config")
         // console.log(accounts)
         // const accountZero = accounts[0]
         deployer = (await getNamedAccounts()).deployer // getting address that owns the signing priv key i.e. msg.sender
-        await deployments.fixture(["all"]) // with the 'all' tag i deploy all the contracts in the deploy folder
+        await deployments.fixture(["all"]) // with the 'all' tag i deploy all the contracts with the all tag in the deploy folder
         // its like running the deploy statement in the console with the 'all' tag
         fundMe = await ethers.getContract("FundMe", deployer) // getting FundMe contract
         mockV3Aggregator = await ethers.getContract(
